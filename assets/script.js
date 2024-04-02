@@ -7,12 +7,11 @@ const resultado = document.querySelector('.resultado');
 const alerta = document.querySelector('.alerta');
 const somar = document.getElementById('soma');
 const subtrair = document.getElementById('subtracao');
-const limpar = document.getElementById('limpar');
+moment.locale('pt-br');
 
 //Eventos
 somar.addEventListener('click', somaTudo);
 subtrair.addEventListener('click', subTudo);
-
 
 //Atualizar valor
 function valorAtual(valor) {
@@ -31,7 +30,7 @@ function exibirAlerta(novoAlerta) {
 
 //Soma geral
 function somaTudo() {
-    const dataInicialValor = new Date(dataInicial.value);
+    const dataInicialValor = moment(dataInicial.value);
     const anoValor = parseInt(ano.value) || 0;
     const mesValor = parseInt(mes.value) || 0;
     const diaValor = parseInt(dia.value) || 0;
@@ -39,16 +38,17 @@ function somaTudo() {
     if (!dataInicial.value) {
         return exibirAlerta('Por favor, preencha a data inicial!');
     } else if ((!anoValor && !mesValor && !diaValor)) {
-        return exibirAlerta('Pelo menos uma das opções devem ser escolhidas para soma ou subtração.');
+        return exibirAlerta('Pelo menos uma das opções deve ser escolhida para soma ou subtração.');
     }
 
-    const novaData = new Date(dataInicialValor.getFullYear() + anoValor, dataInicialValor.getMonth() + mesValor, dataInicialValor.getDate() + diaValor);
-  
-    valorAtual(novaData.toLocaleDateString('pt-br', { timeZoneName: 'longOffset', timeZone: 'America/Rio_Branco'}));
+    const novaData = dataInicialValor.add({ years: anoValor, months: mesValor, days: diaValor });
+
+    valorAtual(formatarData(novaData));
 }
 
+//Subtração geral 
 function subTudo() {
-    const dataInicialValor = new Date(dataInicial.value);
+    const dataInicialValor = moment(dataInicial.value);
     const anoValor = parseInt(ano.value) || 0;
     const mesValor = parseInt(mes.value) || 0;
     const diaValor = parseInt(dia.value) || 0;
@@ -56,11 +56,15 @@ function subTudo() {
     if (!dataInicial.value) {
         return exibirAlerta('Por favor, preencha a data inicial!');
     } else if ((!anoValor && !mesValor && !diaValor)) {
-        return exibirAlerta('Pelo menos uma das opções devem ser escolhidas para soma ou subtração.');
+        return exibirAlerta('Pelo menos uma das opções deve ser escolhida para soma ou subtração.');
     }
 
-    const novaData = new Date(dataInicialValor.getFullYear() - anoValor, dataInicialValor.getMonth() - mesValor, dataInicialValor.getDate() - diaValor);
- 
-    valorAtual(novaData.toLocaleString('pt-br', { timeZoneName: 'longOffset', timeZone: 'America/Rio_Branco'}));
+    const novaData = dataInicialValor.subtract({ years: anoValor, months: mesValor, days: diaValor });
+
+    valorAtual(formatarData(novaData));
 }
 
+function formatarData(data) {
+    const dataFormatada = moment(data).format('dddd, DD [de] MMMM [de] YYYY');
+    return `A data resultante será: ${dataFormatada}`;
+}
