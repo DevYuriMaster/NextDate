@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <title>NextDate</title>
+</head>
+
+<body>
+
+    <div class="estrutura">
+        <header class="header">
+            <nav class="nav-container">
+                <div class="titulo">
+                    NextDate
+                </div>
+            </nav>
+        </header>
+
+        <main class="conteudo">
+            <form class="form">
+                <h2>Calcular Dias</h2>
+                
+                Este serviço permite realizar operações de adição ou subtração a partir de uma data.
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <div class="data-acima">
+                    <label for="data-inicial">Data que sofrerá adição ou subtração:</label>
+                    <input type="date" id="dataInicial" >
+                </div>
+                <br>
+
+               
+                <div class="data-abaixo">
+                    <label for="">Ano:</label>
+                    <input maxlength="4" type="number" class="labelD" id="lano">
+                    <br>
+                    <br>
+                    
+
+                    <label for="">Mês:</label>
+                    <input maxlength="4" type="number" class="labelD" id="lmes">
+                    <br>
+                    <br>
+
+                    <label for="">Dia:</label>
+                    <input maxlength="8" type="number" class="labelD" id="ldia">
+                    <br>
+                    <br>
+
+                    <button type="button" class="botao somar" id="soma">Somar</button>
+                    <button type="button" class="botao subtrair" id="subtracao">Subtrair</button>
+                    <button  class="botao limpar" id="limpar">Limpar</button>
+                </div>
+
+                <div class="resultado " id="resultado">
+
+                </div>
+
+                <div class="alerta" id="alerta">
+
+                </div>
+            </form>
+
+          
+        </main>
+
+
+        <footer class="footer">
+            <div class="direitos">
+                Desenvolvido por Yuri Victor. Todos os direitos reservados ©. 
+            </div>
+            
+        </footer>
+    </div>
+
+    <script src="/assets/script.js"></script>
+</body>
+
+</html>
