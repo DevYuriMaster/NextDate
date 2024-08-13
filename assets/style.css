@@ -38,6 +38,28 @@ a {
     background: rgb(0, 0, 0, 0.8);
 }
 
+.nav-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-buttom {
+    background: #575a5d;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.nav-buttom:hover {
+    background: #6b6f73 ;
+}
+
+.nav-buttom a {
+    color: #FFF;
+}
+
 .titulo{
     font-size: 2.4rem;
     color: white;
@@ -83,6 +105,11 @@ a {
     margin: 5px; 
     cursor: pointer;
 }
+
+
+.diferenca:hover{
+    background: #55a4f4;
+} 
 
 .somar:hover {
     background: #BFE53F;        

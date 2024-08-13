@@ -23,47 +23,38 @@
                 </div>
 
                 <ul class="nav-buttom">
-                    <li><a href="/nextDate.html">Diferença Entre Datas</a></li>
+                    <li><a href="/index.html">Calculo Geral</a></li>
                 </ul>
             </nav>
         </header>
 
         <main class="conteudo">
             <form class="form">
-                <h2>Calcular Dias</h2>
+                <h2>Diferença Entre Dias</h2>
 
-                Este serviço permite realizar operações de adição ou subtração a partir de uma data.
+                Este serviço traz a funão de exibir a diferença em dias de uma data para outra.
                 <br>
                 <br>
                 <br>
                 <br>
 
                 <div class="data-acima">
-                    <label for="data-inicial">Data que sofrerá adição ou subtração:</label>
+                    <label for="data-inicial">Data inicial a ser inserida:</label>
                     <input type="date" id="dataInicial">
                 </div>
                 <br>
 
-
                 <div class="data-abaixo">
-                    <label for="">Ano:</label>
-                    <input maxlength="4" type="number" class="labelD" id="lano">
+                    
+                    <label for="data-final">Data final a ser inserida:</label>
+                    <input type="date" id="dataFinal">
+
+                    <br>
+                    <br>
                     <br>
                     <br>
 
-
-                    <label for="">Mês:</label>
-                    <input maxlength="4" type="number" class="labelD" id="lmes">
-                    <br>
-                    <br>
-
-                    <label for="">Dia:</label>
-                    <input maxlength="8" type="number" class="labelD" id="ldia">
-                    <br>
-                    <br>
-
-                    <button type="button" class="botao somar" id="soma">Somar</button>
-                    <button type="button" class="botao subtrair" id="subtracao">Subtrair</button>
+                    <button type="button" class="botao diferenca" id="diferenca">Diferença</button>
                     <button class="botao limpar" id="limpar">Limpar</button>
                 </div>
 
@@ -88,7 +79,7 @@
         </footer>
     </div>
 
-    <script src="./assets/script.js"></script>
+    <script src="./assets/nextDateScript.js"></script>
 </body>
 
 </html>
